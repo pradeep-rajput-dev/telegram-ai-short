@@ -80,7 +80,9 @@ The channel name must appear in every generated Short.
 
 Default:
 
-**INFO BYTES**
+**Think With Pradeep**
+
+YouTube handle: **@thinkwithpradeep**
 
 The channel name must be configurable through environment variables so it can be changed without editing source code.
 
@@ -260,4 +262,5 @@ AI-generated scripts should preserve the source facts and avoid fabricating info
 **Format:** YouTube Shorts  
 **Language:** Hindi  
 **Style:** Premium AI News Presenter  
-**Default Channel Branding:** INFO BYTES
+**Channel Name:** Think With Pradeep  
+**YouTube Username:** @thinkwithpradeep
