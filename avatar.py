@@ -37,5 +37,8 @@ def render_prakriti(audio_path: str, output_path: str | None = None) -> str:
 
     cmd = shlex.split(command)
     cmd += ["--face", reference, "--audio", audio_path, "--outfile", output]
+
+    # Wav2Lip preserves the supplied reference identity; it does not create a new face.
+    # Outfit changes must use a selected reference image while keeping the same identity.
     subprocess.run(cmd, check=True)
     return output
