@@ -39,3 +39,24 @@ def create_ai_package(text: str) -> dict:
         "description": description,
         "status": "SCRIPT_READY",
     }
+
+
+def create_prakriti_video(script: str) -> dict:
+    """Generate Hindi voice and lip-synced Prakriti video using the free local stack."""
+    from config import VOICE_NAME
+    from tts import generate_hindi_voice
+    from avatar import render_prakriti
+
+    output_dir = ensure_output_dir()
+    audio_path = str(output_dir / "prakriti_voice.mp3")
+    video_path = str(output_dir / "prakriti_avatar.mp4")
+
+    generate_hindi_voice(script, audio_path, voice=VOICE_NAME)
+    render_prakriti(audio_path, video_path)
+
+    return {
+        "audio_path": audio_path,
+        "video_path": video_path,
+        "presenter": PRESENTER_NAME,
+        "status": "AVATAR_READY",
+    }
